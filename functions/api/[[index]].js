@@ -2,11 +2,12 @@ import { isProd } from "../../helpers"
 
 const redirect = async ({ request, next, env }) => {
     const url = new URL(request.url)
-    if (isProd()) {
+    console.log(env)
         url.hostname = 'api.logo.com'
-    } else {
-        url.hostname = 'devapi.logo.com'
-    }
+    // if (isProd()) {
+    // } else {
+    //     url.hostname = 'devapi.logo.com'
+    // }
     const outgoingUrl = url.toString()
     console.log(outgoingUrl)
     const outgoingRequest = new Request(outgoingUrl)
