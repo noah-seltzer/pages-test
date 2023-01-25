@@ -49,12 +49,4 @@ const redirect = async ({ request, env }) => {
   return fetch(outgoingRequest)
 }
 
-const onRequest = [redirect]
-
-module.exports = {
-  onRequest,
-  redirect,
-  generateNewRequest,
-  getNewHostname,
-  isProd,
-}
+export const onRequest = [redirect]
