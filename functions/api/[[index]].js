@@ -8,6 +8,7 @@ const redirect = async ({ request, next, env }) => {
         url.hostname = 'devapi.logo.com'
     }
     const outgoingUrl = url.toString()
+    console.log(outgoingUrl)
     const outgoingRequest = new Request(outgoingUrl)
     return fetch(outgoingRequest)
   }
